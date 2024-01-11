@@ -5,7 +5,7 @@
 - **Description: An app to help users to document their job searching process. Users will be able to create, update, and delete the positions they applied for**
 - **Github URL: https://github.com/LilyX2023/project2**
 - **Deployed Website: https://project2-rachely.onrender.com/**
-- **Trello Board:**
+- **Trello Board: https://trello.com/w/userworkspace13671486/home**
 
 ## List of Dependencies
 
@@ -56,4 +56,4 @@ Below should be a table listing the different routes in your app and their purpo
 
 ## ERD (Entity Relationship Diagram)
 
-![Entity Relationship Diagram](./url-to-picture.jpg)
+![Entity Relationship Diagram](https://i.imgur.com/TM0tWnM.png)
