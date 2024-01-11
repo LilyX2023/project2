@@ -46,7 +46,7 @@ Below should be a table listing the different routes in your app and their purpo
 
 ##### Mobile Design
 
-![Mobile Design Mockup](https://i.imgur.com/MpirWtJ.png)(https://i.imgur.com/w3TJpm0.png[/img])
+![Mobile Design Mockup](https://i.imgur.com/MpirWtJ.png)(https://i.imgur.com/w3TJpm0.png)
 
 ##### Desktop Design
 
