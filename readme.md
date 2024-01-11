@@ -46,14 +46,12 @@ Below should be a table listing the different routes in your app and their purpo
 
 ##### Mobile Design
 
-![Mobile Design Mockup](https://i.imgur.com/jW4w6CM.png)()
+![Mobile Design Mockup](https://i.imgur.com/MpirWtJ.png)([img]https://i.imgur.com/w3TJpm0.png[/img])
 
 ##### Desktop Design
 
-![Desktop Design Mockup](./url-to-picture.jpg)
+![Desktop Design Mockup]([img]https://i.imgur.com/kuPP1vI.png[/img]) ([img]https://i.imgur.com/2Dcm3bI.png[/img])
 
 ## ERD (Entity Relationship Diagram)
-
-This should be a diagram showing your models and any relationships between them.
 
 ![Entity Relationship Diagram](./url-to-picture.jpg)
