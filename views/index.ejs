@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <main>
+      <div>
+        <% for(let job of jobs){ %>
+
+        <article>
+          <a href="/job/<%= job._id %>">
+            <h2>
+                <%= job.companyName %> - <%= job.firstInterview ? "First interview ✅ " : "No Update" %>
+            </h2>
+            </h2>
+          </a>
+        </article>
+
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

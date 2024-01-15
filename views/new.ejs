@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+  <body>
+
+    <main>
+      <div>
+        <a href="/job"><button>Back to main page</button></a>
+        <form action="/job" method="post">
+          <fieldset>
+            <legend>Add a new application</legend>
+            <label
+              >Company:<input 
+              type="text" 
+              name="companyName"
+            /></label>
+            <label
+              >Job title:<input
+                type="text"
+                name="jobTitle"
+            /></label>
+            <label
+            >Application date:<input
+              type="text"
+              name="applyingDate"
+              placeholder="Date when you applied for the job"
+            /></label>
+            <label
+              >First interview:<input 
+              type="checkbox" 
+              name="firstInterview"
+            /></label>
+            <label
+            >Comments:<input
+              type="text"
+              name="comments"
+              placeholder="Tell me what went smoothly and what didn't. Share anything and everything!"
+            /></label>
+            <label
+            >Offer:<input 
+            type="checkbox" 
+            name="offer"
+          /></label>
+          </fieldset>
+          <button>Add an job</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
