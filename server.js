@@ -130,6 +130,82 @@ app.get("/job/new", (req, res) => {
   })
 
 //CREATE
+app.post("/job", async (req, res) => {
+    try {
+      // expression ? true : false (ternary operator)
+      req.body.firstInterview = req.body.firstInterview === "on" ? true : false;
+      req.body.offer = req.body.offer === "on" ? true : false;
+      // create the job in the database
+      await Job.create(req.body);
+      // redirect back to main page
+      res.redirect("/job");
+    } catch (error) {
+      console.log("-----", error.message, "------");
+      res.status(400).send("error, read logs for details");
+    }
+  });
+
+// EDIT 
+app.get("/job/:id/edit", async (req, res) => {
+    try {
+      // get the id from params
+      const id = req.params.id;
+      // get the job from the db
+      const job = await Job.findById(id);
+      //render the template
+      res.render("edit.ejs", { job });
+    } catch (error) {
+      console.log("-----", error.message, "------");
+      res.status(400).send("error, read logs for details");
+    }
+  });
+  
+  // The Update Route
+  app.put("/job/:id", async (req, res) => {
+    try {
+      // get the id
+      const id = req.params.id;
+      // update firstInterview and offer or not in req.body
+      req.body.firstInterview = req.body.firstInterview === "on" ? true : false;
+      req.body.offer = req.body.offer === "on" ? true : false;
+      // update the job in the database
+      await Job.findByIdAndUpdate(id, req.body);
+      // res.redirect back to show page
+      res.redirect(`/job/${id}`);
+    } catch (error) {
+      console.log("-----", error.message, "------");
+      res.status(400).send("error, read logs for details");
+    }
+  });
+  
+  // DELETE
+  app.delete("/job/:id", async (req, res) => {
+    // get the id
+    const id = req.params.id
+    // delete the fruit
+    await Job.findByIdAndDelete(id)
+    // redirect to main page
+    res.redirect("/job")
+  })
+
+//Show
+app.get("/job/:id", async (req, res) => {
+    try{
+        // get the id from params
+        const id = req.params.id
+  
+        // find the particular fruit from the database
+        const job = await Job.findById(id)
+  
+        // render the template with the fruit
+        res.render("show.ejs", {job})
+    }catch(error){
+        console.log("-----", error.message, "------")
+        res.status(400).send("error, read logs for details")
+    }
+  })
+
+
 // turn on the server (the listener)
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

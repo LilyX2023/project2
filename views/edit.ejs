@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <main>
+      <div>
+        <a href="/job"><button>Main Page</button></a>
+        <form action="/job/<%= job._id %>?_method=PUT" method="post">
+          <fieldset>
+            <legend>Edit application for <%= job.companyName %></legend>
+            <label
+              >Company:<input 
+              type="text" 
+              name="companyName"
+              value="<%= job.companyName %>"
+            /></label>
+            <label
+              >Job title:<input
+                type="text"
+                name="jobTitle"
+                value="<%= job.jobTitle %>"
+            /></label>
+            <label
+            >Application date:<input
+              type="text"
+              name="applyingDate"
+              placeholder="Date when you applied for the job"
+              value="<%= job.applyingDate %>"
+            /></label>
+            <label
+              >First interview:<input 
+              type="checkbox" 
+              name="firstInterview"
+              <%= job.firstInterview ? "checked" : "" %>
+            /></label>
+            <label
+            >Comments:<input
+              type="text"
+              name="comments"
+              placeholder="Tell me what went smoothly and what didn't. Share anything and everything!"
+              value="<%= job.comments %>"
+            /></label>
+            <label
+            >Offer:<input 
+            type="checkbox" 
+            name="offer"
+            <%= job.offer ? "checked" : "" %>
+          /></label>
+          </fieldset>
+          <button>Update job application</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
