@@ -7,13 +7,16 @@
     <main>
       <div>
         <article>
+            <h2>
+            Company applied: <%=job.companyName%>
+            </h2>
           <h2>
-            <%= job.firstInterview %> - <%= job.firstInterview ? "First interview ✅ " : "No Update" %>
+            First Interview: <%= job.firstInterview ? "✅ " : "No Update" %>
           </h2>
           <h3> Job title: <%= job.jobTitle %></h3>
           <h3> Application date: <%= job.applyingDate %></h3>
           <h3> Comments: <%=job.comments %></h3>
-          <h3> offer: <%=job.offer%> - <%= job.offer ? "Offer received!!🎉" : "Not yet"%></h3>
+          <h3> Offer: <%= job.offer ? "Offer received!!🎉" : "Not yet"%></h3>
           <a href="/job/<%= job._id %>/edit"><button>Edit</button></a>
           <form action="/job/<%= job._id %>?_method=DELETE" method="POST">
             <button>Delete</button>

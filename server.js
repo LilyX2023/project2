@@ -132,8 +132,10 @@ app.get("/job/new", (req, res) => {
 //CREATE
 app.post("/job", async (req, res) => {
     try {
+        console.log(req.body)
       // expression ? true : false (ternary operator)
-      req.body.firstInterview = req.body.firstInterview === "on" ? true : false;
+      req.body.firstInterview = req.body.firstInterview === "on" ? true : false;//(converting the string to boolean)
+      
       req.body.offer = req.body.offer === "on" ? true : false;
       // create the job in the database
       await Job.create(req.body);
