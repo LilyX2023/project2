@@ -9,7 +9,8 @@
         <form action="/job/<%= job._id %>?_method=PUT" method="post">
           <fieldset>
             <legend>Edit application for <%= job.companyName %></legend>
-            <label
+            <div class="add-margin">
+              <label
               >Company:<input 
               type="text" 
               name="companyName"
@@ -47,6 +48,7 @@
             name="offer"
             <%= job.offer ? "checked" : "" %>
           /></label>
+            </div>
           </fieldset>
           <div class="edit_buttons">
             <button>Update job application</button>

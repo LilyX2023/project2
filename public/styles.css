@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Poppins&family=Roboto&display=swap');
 
+
+
+
 body{
     background-color: #f2f0ee;
 
 }
+
 
 header {
     display: flex;
@@ -74,6 +78,8 @@ nav ul li a button {
 
 
 /*show.ejs page css*/
+
+
 .companyName_firstInterview{
     text-align: center;
     padding-top: 5rem;
@@ -118,17 +124,22 @@ nav ul li a button {
 
 /*New page.ejs*/
 
+form input:focus {
+    border: 1px solid black;
+}
+
 legend {
     display: flex;
     margin: auto;
+    font-size: larger;
 }
 
-.new-buttons{
+#new-buttons{
     display: flex;
     justify-content: space-around;
 }
 
-.new-buttons button{
+#new-buttons button{
     background-color: #86A3C3;
     border:none;
 }
@@ -144,3 +155,24 @@ legend {
     background-color: #86A3C3;
     border:none;
 }
+
+@media all and (max-width: 699px){
+    header h1{
+        font-size: 2rem;
+    }
+    nav ul {
+        display: block;
+        list-style: none;
+    }
+    nav ul li{
+        margin:0;
+        margin-left: 1.5rem;
+    }
+    nav ul li a button {
+        background-color: #86A3C3;
+        border:none;
+        font-size: 0.75rem;
+        justify-content: end;
+    }
+}
+
