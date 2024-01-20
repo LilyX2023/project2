@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Poppins&family=Roboto&display=swap');
 
 
-
+button{
+    background-color: #86A3C3;
+    border:none;
+}
 
 body{
     background-color: #f2f0ee;
@@ -26,21 +29,39 @@ h1{
     font-weight: bold;
 }   
 
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Change the color of the submit button */
+  input[type="submit"] {
+    background-color: #86A3C3;
+    border:none/* Text color */
+    /* Add any other styling properties you'd like */
+  }
 
-nav ul {
+ul {
+    padding-top: 60px;
     display: flex;
     list-style: none;
     margin:0;
+    justify-content: space-around;
 }
 
-nav ul li{
+ul li{
     margin:0;
     margin-left: 1rem;
 }
 
-nav ul li a button {
+ul li a button {
     background-color: #86A3C3;
     border:none;
+
+}
+
+.signup-button{
+    margin:auto 0,
 }
 
 
@@ -160,15 +181,15 @@ legend {
     header h1{
         font-size: 2rem;
     }
-    nav ul {
+    ul {
         display: block;
         list-style: none;
     }
-    nav ul li{
+    ul li{
         margin:0;
         margin-left: 1.5rem;
     }
-    nav ul li a button {
+    ul li a button {
         background-color: #86A3C3;
         border:none;
         font-size: 0.75rem;

@@ -3,82 +3,33 @@
 const express= require('express')
 const Job = require('../models/Job')
 
+
+
 //Create the router
 
 const router = express.Router()
 
-//Routes
-router.get('/seed', async (req, res) => {
-    try {
-    //array of jobs
-    const jobLogs = [
-        {
-            companyName: "TechCorp",
-            jobTitle: "Software Engineer",
-            applyingDate: "2024-01-06",
-            firstInterview: true,
-            comments: "Positive first interview. Looking forward to the next round.",
-            offer: false
-        },
-        {
-            companyName: "Global Innovations",
-            jobTitle: "Product Manager",
-            applyingDate: "2024-01-08",
-            firstInterview: false,
-            comments: "Application under review.",
-            offer: false
-        },
-        {
-            companyName: "Finance Solutions Ltd",
-            jobTitle: "Financial Analyst",
-            applyingDate: "2024-01-10",
-            firstInterview: true,
-            comments: "Awaiting feedback after the first interview.",
-            offer: false
-        },
-        {
-            companyName: "HealthTech Solutions",
-            jobTitle: "Data Scientist",
-            applyingDate: "2024-01-12",
-            firstInterview: true,
-            comments: "Received an offer. Negotiating terms.",
-            offer: true
-        },
-        {
-            companyName: "InnoTech Labs",
-            jobTitle: "UX/UI Designer",
-            applyingDate: "2024-01-15",
-            firstInterview: false,
-            comments: "No response yet.",
-            offer: false
-        },
-        {
-            companyName: "Green Energy Co.",
-            jobTitle: "Environmental Engineer",
-            applyingDate: "2024-01-18",
-            firstInterview: true,
-            comments: "Positive feedback. Awaiting further updates.",
-            offer: false
-        }
-    ]
-    //Delete all fruits
-    await Job.deleteMany({})
-
-    //Seed
-    const jobs = await Job.create(jobLogs)
-
-    //response
-    res.json(jobs)
-    } catch (error) {
-        res.send('There was error')
+//Middleware
+router.use((req, res, next) => {
+    console.table(req.session);
+  
+    if (req.session.loggedIn) {
+      next();
+    } else {
+      res.redirect("/user/login");
     }
+  
+    
+  });
+//Routes
 
-})
 //INDEX
 router.get("/", async (req, res) => {
     try {
+      //get username from req.session
+      const username = req.session.username
       //get all jobs
-      const jobs = await Job.find({});
+      const jobs = await Job.find({username});
       // render a template
       res.render("index.ejs", {jobs})
      
@@ -101,6 +52,9 @@ router.post("/", async (req, res) => {
       req.body.firstInterview = req.body.firstInterview === "on" ? true : false;//(converting the string to boolean)
       
       req.body.offer = req.body.offer === "on" ? true : false;
+      //user to req.body
+      // add username to req.body from req.session
+      req.body.username = req.session.username
       // create the job in the database
       await Job.create(req.body);
       // redirect back to main page

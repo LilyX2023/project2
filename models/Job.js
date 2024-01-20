@@ -12,7 +12,8 @@ const jobListSchema = {
     applyingDate: String,
     firstInterview: Boolean,
     comments: String,
-    offer: Boolean
+    offer: Boolean,
+    username: String
 }
 //Model
 const Job = model('Job', jobListSchema)
