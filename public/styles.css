@@ -22,6 +22,7 @@ h1{
     font-weight: bold;
 }   
 
+
 nav ul {
     display: flex;
     list-style: none;
@@ -115,5 +116,31 @@ nav ul li a button {
     border:none;
 }
 
+/*New page.ejs*/
+
+legend {
+    display: flex;
+    margin: auto;
+}
+
+.new-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.new-buttons button{
+    background-color: #86A3C3;
+    border:none;
+}
+
 /*edit page.ejs*/
 
+.edit_buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit_buttons button{
+    background-color: #86A3C3;
+    border:none;
+}

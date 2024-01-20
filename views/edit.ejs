@@ -6,7 +6,6 @@
 
     <main>
       <div>
-        <a href="/job"><button>Main Page</button></a>
         <form action="/job/<%= job._id %>?_method=PUT" method="post">
           <fieldset>
             <legend>Edit application for <%= job.companyName %></legend>
@@ -49,9 +48,14 @@
             <%= job.offer ? "checked" : "" %>
           /></label>
           </fieldset>
-          <button>Update job application</button>
+          <div class="edit_buttons">
+            <button>Update job application</button>
+          <div>
         </form>
       </div>
+          <div class="edit_buttons">
+          <a href="/job"><button>Back</button></a>
+          </div>
     </main>
   </body>
 </html>
