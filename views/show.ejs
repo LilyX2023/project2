@@ -7,21 +7,31 @@
     <main>
       <div>
         <article>
+          <div class ="companyName_firstInterview">
             <h2>
-            Company applied: <%=job.companyName%>
+              Company applied: <%=job.companyName%>
             </h2>
-          <h2>
-            First Interview: <%= job.firstInterview ? "✅ " : "No Update" %>
-          </h2>
-          <h3> Job title: <%= job.jobTitle %></h3>
-          <h3> Application date: <%= job.applyingDate %></h3>
-          <h3> Comments: <%=job.comments %></h3>
-          <h3> Offer: <%= job.offer ? "Offer received!!🎉" : "Not yet"%></h3>
-          <a href="/job/<%= job._id %>/edit"><button>Edit</button></a>
+            <h2>
+              First Interview: <%= job.firstInterview ? "✅ " : "No Update" %>
+            </h2>
+            <h3> Job title: <%= job.jobTitle %></h3>
+            <h3> Application date: <%= job.applyingDate %></h3>
+          </div>
+            <div class="frame">
+              <div class="srollable-content">
+                Comments: <%=job.comments %>
+              </div>
+            </div>
+          <div class="offer"> 
+            <h3> Offer: <%= job.offer ? "Offer received!!🎉" : "Not yet"%></h3>
+          </div>
+          <div class="buttons">
+            <a href="/job/<%= job._id %>/edit"><button>Edit</button></a>
           <form action="/job/<%= job._id %>?_method=DELETE" method="POST">
             <button>Delete</button>
           </form>
           <a href="/job"><button>Back to Main</button></a>
+          </div>
         </article>
       </div>
     </main>

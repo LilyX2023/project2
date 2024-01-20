@@ -5,17 +5,16 @@
     <%- include("partials/header.ejs") %>
 
     <main>
-      <div>
+      <div class="container">
         <% for(let job of jobs){ %>
-
-        <article>
-          <a href="/job/<%= job._id %>">
-            <h2>
+        <div class="card">
+            <a href="/job/<%= job._id %>">
+                <button class="mainPageButton">
                 <%= job.companyName %> - <%= job.firstInterview ? "First interview ✅ " : "No Update" %>
-            </h2>
-            </h2>
-          </a>
-        </article>
+                </button>
+            </a>
+
+        </div>
 
         <% } %>
       </div>

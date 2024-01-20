@@ -2,10 +2,10 @@
 <html lang="en">
   <%- include("partials/head.ejs") %>
   <body>
+    <%- include("partials/header.ejs") %>
 
     <main>
       <div>
-        <a href="/job"><button>Back to main page</button></a>
         <form action="/job" method="post">
           <fieldset>
             <legend>Add a new application</legend>
@@ -43,6 +43,7 @@
           /></label>
           </fieldset>
           <button>Add an job</button>
+          <a href="/job"><button>Back to main page</button></a>
         </form>
       </div>
     </main>
